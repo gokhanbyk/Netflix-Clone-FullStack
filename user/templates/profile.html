@@ -1,0 +1,30 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Netflix | Profiles</title>
+{% endblock title %}
+
+
+{% block content %}
+    <div class="position-absolute ortala d-flex flex-column justify-content-center align-items-center text-white text-center">
+        <div class="d-flex gap-3 mb-5">
+            {% for profil in profiller %}
+                <div class="card bg-dark text-center text-white">
+                    <a href="{% url "movie" profil.pk %}" class="text-decoration-none text-white">
+                        <img src="{{ profil.image.url }}" class="sekillendir" alt="">
+                        <p class="m-0 p-2 fs-5">{{ profil.name }}</p>
+                    </a>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="text" name='silinecek' hidden value='{{ profil.pk }}'>
+                        <input type="submit" value="Sil" class="btn btn-danger w-100">
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="btn btn-outline-light w-100" href="{% url 'yonetim' %}">Profil Yönetimi</a>
+    </div>
+
+
+{% endblock content %}

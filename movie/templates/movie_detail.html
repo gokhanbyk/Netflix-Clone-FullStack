@@ -1,0 +1,13 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    <title>Netflix</title>
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <video controls src="{{ film.video.url }}" class="w-100"></video>
+    </div>
+
+{% endblock content %}

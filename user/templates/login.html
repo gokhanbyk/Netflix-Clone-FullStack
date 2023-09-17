@@ -1,0 +1,25 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    <title>Netflix | Login</title>
+{% endblock title %}
+
+
+{% block content %}
+    {% include 'partials/_header.html' %}
+
+    {% comment %} <form method="POST" novalidate>
+        {% csrf_token %}
+        {% comment %} <label for="email_inp">Email:</label>
+        <input type="email" name="email" id="email_inp" class="form-control">
+            
+        <label for="pass">Password:</label>
+        <input type="password" name="password" id="pass" class="form-control"> {% endcomment %}
+
+        {% comment %} {{form}}
+        <button class='btn btn-success mt-2' type="submit">Giris Yap</button>
+
+    </form> {% endcomment %}
+
+
+{% endblock content %}

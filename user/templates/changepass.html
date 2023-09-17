@@ -1,0 +1,28 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    <title>Netflix | Change Password</title>
+{% endblock title %}
+
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <form method="POST" class="m-auto">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    {{field.errors}}
+                    <label class="text-white" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% endfor %}
+                    <input class="btn btn-outline-warning mt-4" type="submit" value="Change Password">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Netflix | Profiles</title>
+{% endblock title %}
+
+
+{% block content %}
+    <div class="position-absolute ortala d-flex flex-column justify-content-center align-items-center text-white text-center">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input class="btn btn-outline-light mt-3 w-100" type="submit" value="Kaydet">
+        </form>
+    </div>
+
+
+{% endblock content %}
